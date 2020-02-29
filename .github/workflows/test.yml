@@ -1,0 +1,25 @@
+on: push
+
+env:
+  REPRESENTY: representy
+  DATA_PATH: data.json
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - run: mkdir ${{ env.REPRESENTY }}
+      - name: Test Github Action
+        uses: ./
+        with:
+          name: my-name
+          photo: my-photo
+          title: my-title
+          location: my-location
+          describe: my-describe
+      - uses: actions/upload-artifact@v1
+        with:
+          name: my-artifact
+          path: ${{ env.REPRESENTY }}/${{ env.DATA_PATH }}
