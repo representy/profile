@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/representy/profile#readme",
   "dependencies": {
-    "@actions/core": "^1.2.2"
+    "@actions/core": "^1.2.6"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.21.1"
